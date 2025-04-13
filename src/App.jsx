@@ -100,13 +100,28 @@ function Page({ pageNumber }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let page_clues=sets[Page_sets[pageNumber]];
-    if (passwords.indexOf(password)!=-1) {
-      setClue(passwordClues[page_clues[passwords.indexOf(password)]]);
+    let page_clues = sets[Page_sets[pageNumber]];
+    let result = '';
+    
+    if (passwords.indexOf(password) !== -1) {
+      result = page_clues[passwords.indexOf(password)];
+      setClue(result);
     } else {
-      setClue('Wrong password. Try again.');
+      result = 'Wrong password. Try again.';
+      setClue(result);
+    }
+  
+    // ✅ Google Analytics Event Logging
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'password_submission', {
+        event_category: 'TreasureHunt',
+        event_label: `Page ${pageNumber}`,
+        password_entered: password,
+        output_shown: result
+      });
     }
   };
+  
 
   return (
     <div>
