@@ -43,7 +43,7 @@ const teams = [
   "team11", "team12", "team13", "team14", "team15"
 ];
 const pageRoutes = [
-  "aF7gT93kxLpWqZ1",
+  "page1",
   "zX2bVtE6mNq4JyL",
   "hR8cP59fUwXKaQ3",
   "wL6eMoY1RgD9Cs2",
