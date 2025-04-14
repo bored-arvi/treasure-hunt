@@ -80,7 +80,7 @@ function App() {
 
       </Routes>
       <Routes>
-      {[...Array(15)].map((_, i) => (
+      {[...Array(1,15)].map((_, i) => (
           <Route
             key={i + 1}
             path={`/page${i + 1}`}
