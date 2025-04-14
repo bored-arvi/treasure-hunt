@@ -96,9 +96,9 @@ const TrollPage = ({ pagenumber }) => {
     <div className="card">
       <h2>Page {pagenumber}</h2>
       <p>
-        Think you are smart huh?{' '}
+        You are smart!!{' '}
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">
-          Click here to find out!
+        This is the next clue
         </a>
       </p>
     </div>
