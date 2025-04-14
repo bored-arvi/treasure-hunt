@@ -2,7 +2,13 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './style.css'; // Make sure this imports your updated CSS
 import logo from './assets/logo.png'; // adjust path as needed
+import TagManager from 'react-gtm-module';
 
+const tagManagerArgs = {
+  gtmId: 'GTM-53GWCLXR' // 🔁 Replace this with your GTM ID
+};
+
+TagManager.initialize(tagManagerArgs);
 
 // Clue sets and other data (unchanged)
 const sets = {
@@ -73,9 +79,31 @@ function App() {
 ))}
 
       </Routes>
+      <Routes>
+      {[...Array(15)].map((_, i) => (
+          <Route
+            key={i + 1}
+            path={`/page${i + 1}`}
+            element={<TrollPage pagenumber={i + 1} />}
+          />
+        ))}
+      </Routes>
     </div>
   );
 }
+const TrollPage = ({ pagenumber }) => {
+  return (
+    <div className="card">
+      <h2>Page {pagenumber}</h2>
+      <p>
+        Think you are smart huh?{' '}
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">
+          Click here to find out!
+        </a>
+      </p>
+    </div>
+  );
+};
 
 function Page({ pageNumber }) {
   const [password, setPassword] = React.useState('');
