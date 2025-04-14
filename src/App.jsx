@@ -42,14 +42,36 @@ const teams = [
   "team6", "team7", "team8", "team9", "team10",
   "team11", "team12", "team13", "team14", "team15"
 ];
+const pageRoutes = [
+  "aF7gT93kxLpWqZ1",
+  "zX2bVtE6mNq4JyL",
+  "hR8cP59fUwXKaQ3",
+  "wL6eMoY1RgD9Cs2",
+  "kV9tSa43HnLmEo5",
+  "dN7rJpWuAqZxFv8",
+  "qY5kLbTxUeN7Mr4",
+  "mB2aZwX9VoLpTg7",
+  "xT6yEqRsKaPuBv1",
+  "fL3nGpWyMzRoXq2",
+  "cW4hYzFtLqKeMp8",
+  "uZ1xVaJpKcNmQo3",
+  "nG7LpXeTwVaRzY5",
+  "tJ5fNqKoXyZrMw6",
+  "pB8kYvLsQaTcMz9"
+];
+
+{pageRoutes.map((id, i) => (
+  <Route key={id} path={`/${id}`} element={<Page pageNumber={i + 1} />} />
+))}
 
 function App() {
   return (
     <div id="app">
       <Routes>
-        {[...Array(15)].map((_, i) => (
-          <Route key={i + 1} path={`/page${i + 1}`} element={<Page pageNumber={i + 1} />} />
-        ))}
+      {pageRoutes.map((id, i) => (
+  <Route key={id} path={`/${id}`} element={<Page pageNumber={i + 1} />} />
+))}
+
       </Routes>
     </div>
   );
