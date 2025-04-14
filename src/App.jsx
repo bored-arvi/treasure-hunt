@@ -80,13 +80,13 @@ function App() {
 
       </Routes>
       <Routes>
-      {[...Array(1,15)].map((_, i) => (
-          <Route
-            key={i + 1}
-            path={`/page${i + 1}`}
-            element={<TrollPage pagenumber={i + 1} />}
-          />
-        ))}
+      {[...Array(14)].map((_, i) => (
+  <Route
+    key={i + 2}
+    path={`/page${i + 2}`}
+    element={<TrollPage pagenumber={i + 2} />}
+  />
+))}
       </Routes>
     </div>
   );
