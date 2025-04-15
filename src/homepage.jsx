@@ -62,7 +62,6 @@ const HomePage = () => {
       {/* Round 1 Info */}
       <Card title="📍 Round 1 – QR Hunt">
         <ul>
-          <li>⏱ 1:15 – 2:05 PM</li>
           <li>Scan the QR code to receive your first clue and password.</li>
           <li>Go to the location, scan the next QR, and proceed.</li>
           <li>Up to 15 clues to complete.</li>
@@ -81,7 +80,6 @@ const HomePage = () => {
       {/* Round 2 Info */}
       <Card title="🧭 Round 2 – Spot the Location">
         <ul>
-          <li>⏱ 2:10 – 2:30 PM</li>
           <li>Teams receive a photo sheet with campus locations.</li>
           <li>Identify the correct places based on the images.</li>
           <li>🏅 Top 2 teams move to the Grand Finale!</li>
