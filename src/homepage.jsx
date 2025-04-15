@@ -59,6 +59,7 @@ const HomePage = () => {
       </div>
       <h1 className="main-title">Welcome to Aethora's Treasure Hunt</h1>
 
+      {/* Round 1 Info */}
       <Card title="📍 Round 1 – QR Hunt">
         <ul>
           <li>⏱ 1:15 – 2:05 PM</li>
@@ -69,6 +70,15 @@ const HomePage = () => {
         </ul>
       </Card>
 
+      {/* Round 1 Sessions */}
+      <Card title="📍 Round 1 - Sessions">
+        <ul>
+          <li>Session 1: ⏱ 1:15 – 2:05 PM</li>
+          <li>Session 2: ⏱ 3:00 – 3:50 PM</li>
+        </ul>
+      </Card>
+
+      {/* Round 2 Info */}
       <Card title="🧭 Round 2 – Spot the Location">
         <ul>
           <li>⏱ 2:10 – 2:30 PM</li>
@@ -78,11 +88,20 @@ const HomePage = () => {
         </ul>
       </Card>
 
-      <Card title="🏆 Grand Finale – Mystery Round">
+      {/* Round 2 Sessions */}
+      <Card title="🧭 Round 2 - Sessions">
         <ul>
-          <li>⏱ 4:30 – 5:15 PM</li>
-          <li>Only 2 teams compete.</li>
-          <li>Expect an epic surprise twist challenge!</li>
+          <li>Session 1: ⏱ 2:10 – 2:30 PM</li>
+          <li>Session 2: ⏱ 4:00 – 4:15 PM</li>
+        </ul>
+      </Card>
+
+      {/* Grand Finale Info */}
+      <Card title="🏆 Grand Finale – Final Event">
+        <ul>
+          <li>⏱ 4:30 – 5:15 PM (Max)</li>
+          <li>4 finalist teams compete.</li>
+          <li>Only one team will win!</li>
         </ul>
       </Card>
 

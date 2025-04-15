@@ -21,21 +21,21 @@ const sets = {
 };
 
 const passwordClues = {
-  1: { clue: 'The journey begins with the first step.', password: 'X7a$Lm' },
-  2: { clue: 'Time is of the essence, look carefully around.', password: 'vB@3yC' },
-  3: { clue: 'Seek the golden object hidden in plain sight.', password: '9u*WkF' },
-  4: { clue: 'The key to success lies where shadows are cast.', password: 'Mj6@Xr' },
-  5: { clue: 'Count the number of items, and subtract.', password: 'Tg^E23' },
-  6: { clue: 'Where there’s light, darkness follows. Look where both meet.', password: 'qZ!4bV' },
-  7: { clue: 'It’s not where you start, but where you finish.', password: 'Uj8@fH' },
-  8: { clue: 'Behold the winds of change, they point the way.', password: 'Pw!9mK' },
-  9: { clue: 'Follow the path where two rivers converge.', password: 'Ze^L7x' },
-  10: { clue: 'In numbers, the answer is hidden.', password: 'xR!5nW' },
-  11: { clue: 'Look to the past for the key to the future.', password: 'Kd*YzQ' },
-  12: { clue: 'The mirror reveals what the eye cannot see.', password: 'Aj!XrT' },
-  13: { clue: 'Hidden in plain sight, yet so close.', password: 'Vt^K3L' },
-  14: { clue: 'A twist of fate will lead you home.', password: 'qF#9Zx' },
-  15: { clue: 'The final step is where all paths converge.', password: 'bM!7uN' },
+  1: { clue: 'Things move and fall by rules unseen, Mixing drops can change what’s been.', password: 'X7a$Lm' },
+  2: { clue: 'I’m a place where people meet, For a break or something treat.', password: 'vB@3yC' },
+  3: { clue: 'A crescent of stone where phantoms speak, Their stories drift but never leak.', password: '9u*WkF' },
+  4: { clue: 'The one stands for time, but is built from pride.', password: 'Mj6@Xr' },
+  5: { clue: 'Where sensors sleep besides silence.', password: 'Tg^E23' },
+  6: { clue: 'Not a map that leads to gold or treasure, But a journey where love’s the hidden measure.', password: 'qZ!4bV' },
+  7: { clue: 'Beneath cold breath and a watchful stare, Whispers of metal unlock the lair.', password: 'Uj8@fH' },
+  8: { clue: 'Where joy can be seen, but not touched or mean.', password: 'Pw!9mK' },
+  9: { clue: 'I’m not the core, yet close to light, Where minds prepare before their byte.', password: 'Ze^L7x' },
+  10: { clue: 'A hushed market, rich and vast, Where knowledge waits, built to last.', password: 'xR!5nW' },
+  11: { clue: 'Where ideas are made real, with machines that seal the deal.', password: 'Kd*YzQ' },
+  12: { clue: 'Resting in silence, a king once soared, Its shadow whispers of battles it roared.', password: 'Aj!XrT' },
+  13: { clue: 'Iron bones rest where silence grew, Ghosts of motion in dust and dew.', password: 'Vt^K3L' },
+  14: { clue: 'Not the GJ where shadows linger, But where form takes shape at unseen fingers.', password: 'qF#9Zx' },
+  15: { clue: 'The place where tools are found, Where things are made with fun and sound.', password: 'bM!7uN' },
 };
 
 const team_sets = {
