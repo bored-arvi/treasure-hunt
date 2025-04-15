@@ -51,15 +51,17 @@ const team_sets = {
 };
 
 const teams = [
-'Tungsten', 'Osmium', 'Silver', 'Chrome', 'Titan',
-'Krypto', 'Xenon', 'Platinum', 'Carbon', 'Hydra',
-'Banshee', 'Griffin', 'Phoenix', 'Wyrm', 'Kraken',
-'Kelpie', 'Ifrit', 'Gorgon', 'Naga', 'Imp',
-'Siren', 'Fenrir', 'Oni', 'Chimera', 'Leviathan',
-'Wyvern', 'Valkyrie', 'Ghost', 'Viper', 'Razor',
-'Blitz', 'Nova', 'Talon', 'Onyx', 'Saber',
-'Reaper', 'Frost', 'Havoc', 'Striker', 'Phantom',
-'Ember', 'Aegis', 'Cipher', 'Shade', 'Echo'
+    'tungsten', 'osmium', 'silver', 'chrome', 'titan',
+    'krypto', 'xenon', 'platinum', 'carbon', 'hydra',
+    'banshee', 'griffin', 'phoenix', 'wyrm', 'kraken',
+    'kelpie', 'ifrit', 'gorgon', 'naga', 'imp',
+    'siren', 'fenrir', 'oni', 'chimera', 'leviathan',
+    'wyvern', 'valkyrie', 'ghost', 'viper', 'razor',
+    'blitz', 'nova', 'talon', 'onyx', 'saber',
+    'reaper', 'frost', 'havoc', 'striker', 'phantom',
+    'ember', 'aegis', 'cipher', 'shade', 'echo'
+
+
 ];
 
 const pageRoutes = [
