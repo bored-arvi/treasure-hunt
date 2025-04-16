@@ -47,21 +47,27 @@ const team_sets = {
   26: 'set1', 27: 'set2', 28: 'set3', 29: 'set4', 30: 'set5',
   31: 'set1', 32: 'set2', 33: 'set3', 34: 'set4', 35: 'set5',
   36: 'set1', 37: 'set2', 38: 'set3', 39: 'set4', 40: 'set5',
-  41: 'set1', 42: 'set2', 43: 'set3', 44: 'set4', 45: 'set5'  
+  41: 'set1', 42: 'set2', 43: 'set3', 44: 'set4', 45: 'set5' ,
+  46: 'set1', 47: 'set2', 48: 'set3', 49: 'set4', 50: 'set5',
+  51: 'set1', 52: 'set2', 53: 'set3', 54: 'set4', 55: 'set5',
+  56: 'set1', 57: 'set2', 58: 'set3', 59: 'set4', 60: 'set5',
+  61: 'set1', 62: 'set2', 63: 'set3', 64: 'set4', 65: 'set5' 
 };
 
 const teams = [
-    'tungsten', 'osmium', 'silver', 'chrome', 'titan',
-    'krypto', 'xenon', 'platinum', 'carbon', 'hydra',
-    'banshee', 'griffin', 'phoenix', 'wyrm', 'kraken',
-    'kelpie', 'ifrit', 'gorgon', 'naga', 'imp',
-    'siren', 'fenrir', 'oni', 'chimera', 'leviathan',
-    'wyvern', 'valkyrie', 'ghost', 'viper', 'razor',
-    'blitz', 'nova', 'talon', 'onyx', 'saber',
-    'reaper', 'frost', 'havoc', 'striker', 'phantom',
-    'ember', 'aegis', 'cipher', 'shade', 'echo'
-
-
+  'tungsten', 'osmium', 'silver', 'chrome', 'titan',
+  'krypto', 'xenon', 'platinum', 'carbon', 'hydra',
+  'banshee', 'griffin', 'phoenix', 'wyrm', 'kraken',
+  'kelpie', 'ifrit', 'gorgon', 'naga', 'imp',
+  'siren', 'fenrir', 'oni', 'chimera', 'leviathan',
+  'wyvern', 'valkyrie', 'ghost', 'viper', 'razor',
+  'blitz', 'nova', 'talon', 'onyx', 'saber',
+  'reaper', 'frost', 'havoc', 'striker', 'phantom',
+  'ember', 'aegis', 'cipher', 'shade', 'echo',
+  'Drakon', 'Mythos', 'Obsidian', 'Zephyr', 'Rune',
+  'Glint', 'Thorne', 'Nocturne', 'Maelstrom', 'Ashen',
+  'Vanta', 'Quasar', 'Mirage', 'Valken', 'Hexen',
+  'Brimstone', 'Scythe', 'Solace', 'Crux', 'Riven'
 ];
 
 const pageRoutes = [
