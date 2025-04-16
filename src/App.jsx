@@ -64,7 +64,7 @@ const teams = [
   'blitz', 'nova', 'talon', 'onyx', 'saber',
   'reaper', 'frost', 'havoc', 'striker', 'phantom',
   'ember', 'aegis', 'cipher', 'shade', 'echo',
-  'drakon', 'mythos', 'obsidian', 'zephyr', 'rune',
+    'drakon', 'mythos', 'obsidian', 'zephyr', 'rune',
   'glint', 'thorne', 'nocturne', 'maelstrom', 'ashen',
   'vanta', 'quasar', 'mirage', 'valken', 'hexen',
   'brimstone', 'scythe', 'solace', 'crux', 'riven'
@@ -139,33 +139,51 @@ function Page({ pageNumber }) {
     setNextPassword('');
   }, [pageNumber]);
   
-
   const handleSubmit = (e) => {
     e.preventDefault();
+  
     const teamIndex = teams.indexOf(TeamName.trim().toLowerCase());
     if (teamIndex === -1) {
       setClue("Team name not found.");
       return;
     }
-
-    const teamSet = team_sets[teamIndex + 1];
-    const page_clues = sets[teamSet];
-    const clueIndex = page_clues[pageNumber - 1];
-
-    if (password === passwordClues[clueIndex].password) {
-      setClue(passwordClues[clueIndex].clue);
-      const nextClueIndex = page_clues[pageNumber];
-      if (nextClueIndex) {
-        setNextPassword(passwordClues[nextClueIndex].password);
+  
+    const teamSet = team_sets[teamIndex + 1]; // set1, set2, etc.
+    const setNumber = parseInt(teamSet.replace('set', '')); // e.g., set2 -> 2
+    const clueSequence = sets[teamSet];
+  
+    // Adjusted page index offset
+    const relativeIndex = pageNumber - setNumber;
+  
+    if (relativeIndex < 0 || relativeIndex >= clueSequence.length) {
+      setClue("This page is not available for your team yet.");
+      setNextPassword('');
+      return;
+    }
+  
+    const clueId = clueSequence[relativeIndex];
+    const expectedPassword = passwordClues[clueId].password;
+  
+    if (password === expectedPassword) {
+      setClue(passwordClues[clueId].clue);
+  
+      // Prepare next clue and password if not out of bounds
+      const nextIndex = relativeIndex + 1;
+      if (nextIndex < clueSequence.length) {
+        const nextClueId = clueSequence[nextIndex];
+        setNextPassword(passwordClues[nextClueId].password);
+      } else {
+        setNextPassword("You've completed all clues in your set!");
       }
-
+  
+      // Optional: Log success to Google Apps Script endpoint
       const data = {
         page: pageNumber,
         password: password,
         status: 'success',
         team: TeamName,
       };
-
+  
       fetch("https://script.google.com/macros/s/AKfycbyV1c_zWOgy4GHNMAMkCDR-SE0pXuqvcaiGFP3A7bh6nqlrAMep-lKDCFJ3wyqd6SFJTw/exec", {
         method: 'POST',
         headers: {
@@ -174,10 +192,11 @@ function Page({ pageNumber }) {
         body: JSON.stringify(data),
       });
     } else {
-      setClue('Wrong password. Try again.');
+      setClue("Wrong password. Try again.");
       setNextPassword('');
     }
   };
+  
 
   return (
     <div className="page-container">
