@@ -64,10 +64,10 @@ const teams = [
   'blitz', 'nova', 'talon', 'onyx', 'saber',
   'reaper', 'frost', 'havoc', 'striker', 'phantom',
   'ember', 'aegis', 'cipher', 'shade', 'echo',
-  'Drakon', 'Mythos', 'Obsidian', 'Zephyr', 'Rune',
-  'Glint', 'Thorne', 'Nocturne', 'Maelstrom', 'Ashen',
-  'Vanta', 'Quasar', 'Mirage', 'Valken', 'Hexen',
-  'Brimstone', 'Scythe', 'Solace', 'Crux', 'Riven'
+  'drakon', 'mythos', 'obsidian', 'zephyr', 'rune',
+  'glint', 'thorne', 'nocturne', 'maelstrom', 'ashen',
+  'vanta', 'quasar', 'mirage', 'valken', 'hexen',
+  'brimstone', 'scythe', 'solace', 'crux', 'riven'
 ];
 
 const pageRoutes = [
