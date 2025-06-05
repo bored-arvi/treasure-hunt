@@ -1,17 +1,16 @@
-import React, { useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import {DisplayPage,UpdatePage,Navbar} from "./database.jsx"; // adjust the path as neede   // adjust the path as needed
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "./firebaseConfig";
 
-function AppRouter() {
-  const [searchParams] = useSearchParams();
-  const username = searchParams.get("username");
-  const password = searchParams.get("password");
-  const [page, setPage] = useState("display");
+import { DisplayPage, UpdatePage, Navbar } from "./database.jsx";
+import Home from "./pages/homepage.jsx";
+import CluePage from "./pages/cluepage.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
-  if (!username || !password) {
-    return <div className="p-4">Please provide ?username=...&password=... in URL</div>;
-  }
-
+// Admin Panel Component
+export function AdminPanel() {
+  const [page, setPage] = React.useState("display");
   return (
     <>
       <Navbar setPage={setPage} />
@@ -20,5 +19,39 @@ function AppRouter() {
   );
 }
 
-export default AppRouter;
-// This file serves as the main entry point for the application, routing to either the display or update page based on the provided query parameters.
+// User Routes Component
+export function UserRoutes() {
+  const [clueCount, setClueCount] = useState(0);
+
+  useEffect(() => {
+    async function fetchClueCount() {
+      const snapshot = await getDocs(collection(db, "clue_set"));
+      setClueCount(snapshot.size);
+    }
+    fetchClueCount();
+  }, []);
+
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      {[...Array(clueCount)].map((_, idx) => (
+        <Route
+          key={idx}
+          path={`/clue/${idx + 1}`}
+          element={<CluePage clueNo={idx + 1} />}
+        />
+      ))}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+}
+
+// Main Routes Component combining both admin and user routes
+export default function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/admin/*" element={<AdminPanel />} />
+      <Route path="/*" element={<UserRoutes />} />
+    </Routes>
+  );
+}

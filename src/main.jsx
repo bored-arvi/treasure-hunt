@@ -12,13 +12,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 );*/
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import AppRouter from "./routes.jsx"; // Assuming your main component file is App.jsx
+import { BrowserRouter as Router } from "react-router-dom";
+import AppRoutes from "./routes.jsx";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <AppRouter />
-    </BrowserRouter>
-  </React.StrictMode>
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+  <Router>
+    <AppRoutes />
+  </Router>
 );
+

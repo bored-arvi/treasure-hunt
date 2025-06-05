@@ -1,4 +1,65 @@
-/*import React from 'react';
+import React, { useState } from "react";
+
+const CluePage = ({ clueNo }) => {
+  const [teamNo, setTeamNo] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [nextClue, setNextClue] = useState(null);
+
+  const checkClue = async () => {
+    // Call backend API to validate teamNo & password for clueNo
+    const res = await fetch("/api/check-clue", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ clueNo, teamNo, password }),
+    });
+    const data = await res.json();
+
+    if (data.valid) {
+      setMessage("Correct! Here's your clue:");
+      setNextClue(data.nextClue); // assume nextClue has clue text and password
+    } else {
+      setMessage("Invalid team number or password for this clue.");
+      setNextClue(null);
+    }
+  };
+
+  return (
+    <div className="p-4">
+      <h2>Clue #{clueNo}</h2>
+      <input
+        type="number"
+        placeholder="Team Number"
+        value={teamNo}
+        onChange={(e) => setTeamNo(e.target.value)}
+        className="border p-1 m-1"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        className="border p-1 m-1"
+      />
+      <button onClick={checkClue} className="bg-blue-600 text-white p-2 m-1">
+        Submit
+      </button>
+
+      {message && <p>{message}</p>}
+      {nextClue && (
+        <div className="mt-4 p-2 border rounded">
+          <h3>Next Clue:</h3>
+          <p>{nextClue.clue}</p>
+          <p><strong>Password:</strong> {nextClue.password}</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default CluePage;
+
+/*import React from 'react';C:\Users\aravi\treasure-hunt\src\pages\cluepage.jsx
 import { Routes, Route } from 'react-router-dom';
 import './style.css'; // Make sure this imports your updated CSS
 import logo from './assets/logo.png'; // adjust path as needed
@@ -232,5 +293,7 @@ function Page({ pageNumber }) {
 
 
 export default App;*/
+
+
 
 

@@ -68,3 +68,15 @@ const HomePage = () => {
           <li>🏁 Top 5 fastest teams qualify for Round 2.</li>
         </ul>
       </Card>*/
+import React from "react";
+
+const Home = () => {
+  return (
+    <div className="p-4">
+      <h1>Welcome to the Treasure Hunt!</h1>
+      <p>Some blah blah placeholder content here.</p>
+    </div>
+  );
+};
+
+export default Home;
