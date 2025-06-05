@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './style.css'; // Make sure this imports your updated CSS
 import logo from './assets/logo.png'; // adjust path as needed
@@ -231,4 +231,6 @@ function Page({ pageNumber }) {
 }
 
 
-export default App;
+export default App;*/
+
+

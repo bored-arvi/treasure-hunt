@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+/*import React, { useEffect, useState } from 'react';
 import './style.css';
 import logo from './assets/logo.png';
 
@@ -59,53 +59,12 @@ const HomePage = () => {
       </div>
       <h1 className="main-title">Welcome to Aethora's Treasure Hunt</h1>
 
-      {/* Round 1 Info */}
-      <Card title="📍 Round 1 – QR Hunt">
+      {/* Round 1 Info */
+      /*<Card title="📍 Round 1 – QR Hunt">
         <ul>
           <li>Scan the QR code to receive your first clue and password.</li>
           <li>Go to the location, scan the next QR, and proceed.</li>
           <li>Up to 15 clues to complete.</li>
           <li>🏁 Top 5 fastest teams qualify for Round 2.</li>
         </ul>
-      </Card>
-
-      {/* Round 1 Sessions */}
-      <Card title="📍 Round 1 - Sessions">
-        <ul>
-          <li>Session 1: ⏱ 1:15 – 2:05 PM</li>
-          <li>Session 2: ⏱ 3:00 – 3:50 PM</li>
-        </ul>
-      </Card>
-
-      {/* Round 2 Info */}
-      <Card title="🧭 Round 2 – Spot the Location">
-        <ul>
-          <li>Teams receive a photo sheet with campus locations.</li>
-          <li>Identify the correct places based on the images.</li>
-          <li>🏅 Top 2 teams move to the Grand Finale!</li>
-        </ul>
-      </Card>
-
-      {/* Round 2 Sessions */}
-      <Card title="🧭 Round 2 - Sessions">
-        <ul>
-          <li>Session 1: ⏱ 2:10 – 2:30 PM</li>
-          <li>Session 2: ⏱ 4:00 – 4:15 PM</li>
-        </ul>
-      </Card>
-
-      {/* Grand Finale Info */}
-      <Card title="🏆 Grand Finale – Final Event">
-        <ul>
-          <li>⏱ 4:30 – 5:15 PM (Max)</li>
-          <li>4 finalist teams compete.</li>
-          <li>Only one team will win!</li>
-        </ul>
-      </Card>
-
-      <p className="closing-line">✨ All the best! Let the hunt begin. ✨</p>
-    </div>
-  );
-};
-
-export default HomePage;
+      </Card>*/
