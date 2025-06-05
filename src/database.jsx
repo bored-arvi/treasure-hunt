@@ -55,11 +55,11 @@ function DisplayPage() {
     <div className="p-4">
       <h2 className="text-xl font-bold">Clue Set</h2>
       <table className="table-auto w-full mb-8">
-        <thead><tr><th>ID</th><th>Password</th><th>Clue</th><th>Delete</th></tr></thead>
+        <thead><tr><th>ID</th><th>Password</th><th>Clue</th><th>Clue No</th></tr></thead>
         <tbody>
           {clues.map(c => (
             <tr key={c.id}>
-              <td>{c.id}</td><td>{c.password}</td><td>{c.clue}</td>
+              <td>{c.id}</td><td>{c.password}</td><td>{c.clue}</td><td>{c.clue_no}</td>
               <td><button onClick={() => deleteClue(c.id)} className="text-red-500">Delete</button></td>
             </tr>
           ))}
@@ -88,9 +88,17 @@ function UpdatePage() {
   const [mode, setMode] = useState("clue"); // 'clue' or 'team'
   const [clue, setClue] = useState("");
   const [cluePass, setCluePass] = useState("");
+  const [clueNo, setClueNo] = useState("");
   const [teamNo, setTeamNo] = useState("");
 
   const addClue = async () => {
+
+    const existing = await getDocs(collection(db, "clue_set"));
+    if (existing.docs.find(doc => doc.data().clue_no === parseInt(clueNo))) {
+      alert(`Clue Number ${clueNo} already exists`);
+      return;
+    }
+
     await addDoc(collection(db, "clue_set"), {
       clue,
       password: cluePass
@@ -136,6 +144,7 @@ const addTeam = async () => {
           <h3 className="text-lg font-bold">Add Clue</h3>
           <input value={clue} onChange={e => setClue(e.target.value)} placeholder="Clue" className="border p-1 m-1" />
           <input value={cluePass} onChange={e => setCluePass(e.target.value)} placeholder="Password" className="border p-1 m-1" />
+          <input value={clueNo} onChange={e => setClueNo(e.target.value)} placeholder="Clue No" className="border p-1 m-1" />
           <button onClick={addClue} className="bg-blue-500 text-white p-1 px-2">Add Clue</button>
         </>
       ) : (
