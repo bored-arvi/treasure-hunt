@@ -4,53 +4,75 @@ const CluePage = ({ clueNo }) => {
   const [teamNo, setTeamNo] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const [nextClue, setNextClue] = useState(null);
+  const [nextClueText, setNextClueText] = useState("");
+  const [nextPassword, setNextPassword] = useState("");
 
   const checkClue = async () => {
-    // Call backend API to validate teamNo & password for clueNo
-    const res = await fetch("/api/check-clue", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ clueNo, teamNo, password }),
-    });
-    const data = await res.json();
+    try {
+      const res = await fetch("/api/check-clue", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          pageNo: clueNo,
+          teamNo: parseInt(teamNo),
+          password,
+        }),
+      });
 
-    if (data.valid) {
-      setMessage("Correct! Here's your clue:");
-      setNextClue(data.nextClue); // assume nextClue has clue text and password
-    } else {
-      setMessage("Invalid team number or password for this clue.");
-      setNextClue(null);
+      const data = await res.json();
+
+      if (data.valid) {
+        setMessage(data.message);
+        setNextClueText(data.nextClue);
+        setNextPassword(data.nextPassword);
+      } else {
+        setMessage(data.message || "Invalid input.");
+        setNextClueText("");
+        setNextPassword("");
+      }
+    } catch (error) {
+      setMessage("Server error. Please try again.");
+      setNextClueText("");
+      setNextPassword("");
     }
   };
 
   return (
     <div className="p-4">
-      <h2>Clue #{clueNo}</h2>
+      <h2 className="text-xl font-bold">Clue #{clueNo}</h2>
+
       <input
         type="number"
         placeholder="Team Number"
         value={teamNo}
         onChange={(e) => setTeamNo(e.target.value)}
-        className="border p-1 m-1"
+        className="border p-2 m-1 w-full"
       />
+
       <input
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="border p-1 m-1"
+        className="border p-2 m-1 w-full"
       />
-      <button onClick={checkClue} className="bg-blue-600 text-white p-2 m-1">
+
+      <button
+        onClick={checkClue}
+        className="bg-blue-600 hover:bg-blue-700 text-white p-2 m-1 w-full"
+      >
         Submit
       </button>
 
-      {message && <p>{message}</p>}
-      {nextClue && (
-        <div className="mt-4 p-2 border rounded">
-          <h3>Next Clue:</h3>
-          <p>{nextClue.clue}</p>
-          <p><strong>Password:</strong> {nextClue.password}</p>
+      {message && <p className="mt-2 font-semibold">{message}</p>}
+
+      {nextClueText && (
+        <div className="mt-4 p-3 border rounded bg-gray-100">
+          <h3 className="font-bold">Next Clue:</h3>
+          <p>{nextClueText}</p>
+          <p>
+            <strong>Password:</strong> {nextPassword}
+          </p>
         </div>
       )}
     </div>
@@ -58,6 +80,7 @@ const CluePage = ({ clueNo }) => {
 };
 
 export default CluePage;
+
 
 /*import React from 'react';C:\Users\aravi\treasure-hunt\src\pages\cluepage.jsx
 import { Routes, Route } from 'react-router-dom';
